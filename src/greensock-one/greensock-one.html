@@ -30,10 +30,15 @@
 
       attached: function (){
 
-        console.log ('greensock attached',this.bgcolor);
+        console.log ('greensock attached',this.top);
 
-        TweenMax.to (this.$.main,1,{top:'50px',left:'50px',rotation:this.rotation });
+        this.$.main.style.top = this.top;
+        this.$.main.style.left = this.left;
+
+        TweenMax.to (this.$.main,1,{top:'+=50px',left:'+=50px',rotation:this.rotation });
         this.$.main.style.backgroundColor = this.bgcolor;
+
+
 
       },
 
@@ -45,6 +50,16 @@
         rotation: {
           type:Number,
           value:360
+
+        },
+        top: {
+          type:String,
+          value:'0px'
+
+        },
+        left: {
+          type:String,
+          value:'0px'
 
         },
         bgcolor:{
