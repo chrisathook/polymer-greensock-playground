@@ -1,5 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
+<link rel="import" href="../greensock-one/greensock-one.html">
+
 <dom-module id="main-app">
   <template>
     <style>
@@ -8,6 +10,7 @@
       }
     </style>
     <h2>Hello [[prop1]]</h2>
+    <greensock-one></greensock-one>
   </template>
 
   <script>
@@ -18,9 +21,9 @@
       properties: {
         prop1: {
           type: String,
-          value: 'main-app',
-        },
-      },
+          value: 'main-app'
+        }
+      }
 
     });
   </script>

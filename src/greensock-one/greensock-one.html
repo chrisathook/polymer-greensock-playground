@@ -1,0 +1,38 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="greensock-one">
+  <template>
+    <style>
+      :host {
+        display: block;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+
+      }
+      #main {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: crimson;
+
+      }
+    </style>
+    <div id="main"></div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'greensock-one',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'greensock-one'
+        }
+      }
+
+    });
+  </script>
+</dom-module>
