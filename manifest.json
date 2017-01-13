@@ -1,0 +1,7 @@
+{
+  "name": "polymer-greensock-playground",
+  "short_name": "polymer-greensock-playground",
+  "description": "testing greensock and polymer",
+  "start_url": "/",
+  "display": "standalone"
+}

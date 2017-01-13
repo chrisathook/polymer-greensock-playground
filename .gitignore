@@ -1,0 +1,12 @@
+.idea
+.tmp
+.sass-cache
+.vagrant
+dist
+_dist
+node_modules
+bower_components
+**/bower_components
+
+*.pyc
+
