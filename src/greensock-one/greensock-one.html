@@ -20,10 +20,21 @@
     <div id="main"></div>
   </template>
 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/TweenMax.min.js"></script>
+
   <script>
     Polymer({
 
       is: 'greensock-one',
+
+
+      attached: function (){
+
+        console.log ('greensock attached');
+
+        TweenMax.to (this.$.main,1,{top:'50px',left:'50px' })
+
+      },
 
       properties: {
         prop1: {
