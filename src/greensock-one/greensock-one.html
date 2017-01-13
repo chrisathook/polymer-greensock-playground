@@ -13,7 +13,7 @@
         position: absolute;
         width: 200px;
         height: 200px;
-        background-color: crimson;
+
 
       }
     </style>
@@ -30,9 +30,10 @@
 
       attached: function (){
 
-        console.log ('greensock attached');
+        console.log ('greensock attached',this.bgcolor);
 
-        TweenMax.to (this.$.main,1,{top:'50px',left:'50px' })
+        TweenMax.to (this.$.main,1,{top:'50px',left:'50px',rotation:this.rotation });
+        this.$.main.style.backgroundColor = this.bgcolor;
 
       },
 
@@ -40,6 +41,16 @@
         prop1: {
           type: String,
           value: 'greensock-one'
+        },
+        rotation: {
+          type:Number,
+          value:360
+
+        },
+        bgcolor:{
+          type:String,
+          value:"#FF0000"
+
         }
       }
 
