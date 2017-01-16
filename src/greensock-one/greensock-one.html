@@ -35,9 +35,11 @@
           TweenMax.to(this.$.main, 1, {top: '+=50px', left: '+=50px', rotation: this.rotation});
         }.bind(this);
         var tabletInit = function () {
+          // if your not animating in tablets and you need to do custom stuff for tablets do it here
+
         };
         if (bowser.tablet === true) {
-          if (this.ignoretablet === false) {
+          if (this.ignoretablet === true) {
             tabletInit()
           }
         } else {
