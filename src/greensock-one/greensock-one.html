@@ -37,10 +37,12 @@
         var tabletInit = function () {
           // if your not animating in tablets and you need to do custom stuff for tablets do it here
 
-        };
+        }.bind(this);
         if (bowser.tablet === true) {
           if (this.ignoretablet === true) {
             tabletInit()
+          }else {
+            desktopInit()
           }
         } else {
           desktopInit()
