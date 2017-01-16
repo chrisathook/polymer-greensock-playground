@@ -7,71 +7,69 @@
 
         position: absolute;
 
-
       }
+
       #main {
         position: absolute;
         width: 200px;
         height: 200px;
-
 
       }
     </style>
     <div id="main"></div>
   </template>
 
-  <link rel="import" href="../common/js-import/js-import.html">
+  <link rel="import" href="../js-import/js-import.html">
 
   <script>
     Polymer({
-
       is: 'greensock-one',
-
-
-      attached: function (){
-
-        console.log ('greensock attached',this.top);
-
+      attached: function () {
+        console.log('greensock attached');
         this.$.main.style.top = this.top;
         this.$.main.style.left = this.left;
-
-        TweenMax.to (this.$.main,1,{top:'+=50px',left:'+=50px',rotation:this.rotation });
         this.$.main.style.backgroundColor = this.bgcolor;
 
 
-
-
-
+        var desktopInit = function () {
+          TweenMax.to(this.$.main, 1, {top: '+=50px', left: '+=50px', rotation: this.rotation});
+        }.bind(this);
+        var tabletInit = function () {
+        };
+        if (bowser.tablet === true) {
+          if (this.ignoretablet === false) {
+            tabletInit()
+          }
+        } else {
+          desktopInit()
+        }
       },
-
-
       properties: {
         prop1: {
           type: String,
           value: 'greensock-one'
         },
         rotation: {
-          type:Number,
-          value:360
-
+          type: Number,
+          value: 360
         },
         top: {
-          type:String,
-          value:'0px'
-
+          type: String,
+          value: '0px'
         },
         left: {
-          type:String,
-          value:'0px'
-
+          type: String,
+          value: '0px'
         },
-        bgcolor:{
-          type:String,
-          value:"#FF0000"
-
+        bgcolor: {
+          type: String,
+          value: "#FF0000"
+        },
+        ignoretablet: {
+          type: Boolean,
+          value: false
         }
       }
-
     });
   </script>
 </dom-module>
